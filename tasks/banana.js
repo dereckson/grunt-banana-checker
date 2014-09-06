@@ -145,6 +145,13 @@ module.exports = function ( grunt ) {
 			return false;
 		}
 
-		grunt.log.ok( messageCount + ' message' + ( messageCount > 1 ? 's' : '') + ' checked.' );
+		messageCount -= sourceMetaDatablocks;
+
+		grunt.log.ok(
+			messageCount + ' message' + ( messageCount > 1 ? 's' : '') + ' checked' +
+			( !sourceMetaDatablocks ? '' : ', plus ' +
+				( sourceMetaDatablocks > 1 ? sourceMetaDatablocks + ' metadata blocks' : 'a metadata block' )
+			) + '.'
+		);
 	} );
 };
